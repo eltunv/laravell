@@ -1,20 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\controllers\ElaqeController;
-use App\Http\controllers\MainController;
+use App\Http\controllers\EltunController;
+use App\Http\controllers\HaqqindaController;
 
-Route::get('/eltun','App\Http\controllers\EltunController@index');
 
-Route::get('/telebe' , function(){
-     return 'telebe ad';
+Route::get('/' , function (){
+  return view('max');
 });
 
-Route::get('/selli', function(){
-    return 'Selli Xanim';
+Route::get('/ingilis' ,function(){
+    return "Ingilis dili";
 });
 
-Route::get('/haqqinda','App\Http\controllers\HaqqindaController@index');
-Route::get('/elaqe','App\Http\controllers\ElaqeController@index');
-Route::get('/haqqinda/{ad}','App\Http\controllers\HaqqindaController@insan');
-Route::get('/main', [MainController::class , 'index']);
+Route::get('/ramal','App\Http\controllers\RamalController@index');
+Route::get('/haqqinda' ,[HaqqindaController:: class , 'index']);
