@@ -1,17 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\controllers\EltunController;
-use App\Http\controllers\HaqqindaController;
+use App\Http\Controllers\Deneme;
 
-
-Route::get('/' , function (){
-  return view('max');
+Route::get('/telebe',function(){
+   return "Telebe adi";
 });
 
-Route::get('/ingilis' ,function(){
-    return "Ingilis dili";
+Route::get('/',function(){
+   return view('welcome');
 });
 
-Route::get('/ramal','App\Http\controllers\RamalController@index');
-Route::get('/haqqinda' ,[HaqqindaController:: class , 'index']);
+
+Route::get('/turkiye', function(){
+   return view('ornek');
+});
+
+Route::get('/deneme/{masin}',[Deneme::class ,'test']);
